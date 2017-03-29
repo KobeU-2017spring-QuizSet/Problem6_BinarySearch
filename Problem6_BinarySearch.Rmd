@@ -48,26 +48,26 @@ Compare $Target$ with $8$. In this case, $Target>8$ then we have found where $Ta
 
 # Question
 
-- you have `ToBeSorted <- sort(as.integer( runif(100, min = 1, max = 99) ))`
-- Implement `binary search ` find where `T` is in `ToBeSorted`
+- you have `ArrayToSearch <- sort(as.integer( runif(100, min = 1, max = 99) ))`
+- Implement `binary search ` find where `T` is in `ArrayToSearch`
 - In this excersise, set `T <- as.integer( runif(1, min = 1, max = 99)`.
-- In the case `ToBeSorted` dose not have the same number as `T`, print('can't find')
+- In the case `ArrayToSearch` dose not have the same number as `T`, print('can't find')
 
 # Sample Answer
 
 
 ```{r}
-binary <- function(ToBeSorted,Target){
+binary <- function(ArrayToSearch,Target){
   
-  N <- length(ToBeSorted) #Number of factor
+  N <- length(ArrayToSearch) #Number of factor
   Start <- 1
   End   <- N
   
   while(Start<End){
     Mid <- as.integer((Start + End)/2)
-    if(ToBeSorted[Mid] == Target){
+    if(ArrayToSearch[Mid] == Target){
       return(Mid)
-    }else if(Target < ToBeSorted[Mid]){
+    }else if(Target < ArrayToSearch[Mid]){
       End <- Mid 
     }else{
       Start <- Mid + 1
@@ -76,11 +76,11 @@ binary <- function(ToBeSorted,Target){
   print('Not found')
  }
 
-ToBeSorted <- sort(as.integer( runif(100, min = 1, max = 99) ))
+ArrayToSearch <- sort(as.integer( runif(100, min = 1, max = 99) ))
 Target <-  as.integer( runif(1, min = 1, max = 99) )
 
 print(Target) 
-ToBeSorted[binary(ToBeSorted,Target)]
-print(ToBeSorted)
+ArrayToSearch[binary(ArrayToSearch,Target)]
+print(ArrayToSearch)
 ```
 
