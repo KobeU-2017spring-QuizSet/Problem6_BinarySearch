@@ -14,7 +14,7 @@ If you have a number $A$ that you need to find out where it is in a list, binary
 
 - compare $A$ with the mean number ,$R_m$, of the list ($m := N/2$)
 - if $A>R_m$, compare $A$ with $R_{m_2}$ ($m_2:= 3N/4$)
--if $A<R_m$, compare $A$ with $R_{m_2}$ ($m_2:= N/4$)
+- if $A<R_m$, compare $A$ with $R_{m_2}$ ($m_2:= N/4$)
 
 
 Here is the simple explanation.  
