@@ -34,7 +34,7 @@ Divide the list into half,
 
 `(1,2,3)`, `(7,8,9)`.
 
-Because $T>6$, we are interested in the latter list `(7,8,9)`.
+Because $Target>6$, we are interested in the latter list `(7,8,9)`.
 
 ### Second Step
  
@@ -42,45 +42,45 @@ You have
 
 `(7,8,9)`.
 
-Compare $T$ with $8$. In this case, $T>8$ then we have found where $T=9$ is in the list.
+Compare $Target$ with $8$. In this case, $Target>8$ then we have found where $Target=9$ is in the list.
 
 
 
 # Question
 
-- you have `BS <- sort(as.integer( runif(100, min = 1, max = 99) ))`
-- Implement `binary search ` find where `T` is in `BS`
+- you have `ToBeSorted <- sort(as.integer( runif(100, min = 1, max = 99) ))`
+- Implement `binary search ` find where `T` is in `ToBeSorted`
 - In this excersise, set `T <- as.integer( runif(1, min = 1, max = 99)`.
-- In the case `BS` dose not have the same number as `T`, print('can't find')
+- In the case `ToBeSorted` dose not have the same number as `T`, print('can't find')
 
 # Sample Answer
 
 
 ```{r}
-binary <- function(BS){
+binary <- function(ToBeSorted,Target){
   
-  N <- length(BS) #Number of factor
+  N <- length(ToBeSorted) #Number of factor
   Start <- 1
   End   <- N
   
   while(Start<End){
     Mid <- as.integer((Start + End)/2)
-    if(BS[Mid] == T){
+    if(ToBeSorted[Mid] == Target){
       return(Mid)
-    }else if(T < BS[Mid]){
+    }else if(Target < ToBeSorted[Mid]){
       End <- Mid 
     }else{
       Start <- Mid + 1
     }
   }
   print('Not found')
-}
+ }
 
-BS <- sort(as.integer( runif(100, min = 1, max = 99) ))
-T <-  as.integer( runif(1, min = 1, max = 99) )
+ToBeSorted <- sort(as.integer( runif(100, min = 1, max = 99) ))
+Target <-  as.integer( runif(1, min = 1, max = 99) )
 
-print(T) 
-BS[binary(BS)]
-print(BS)
+print(Target) 
+ToBeSorted[binary(ToBeSorted,Target)]
+print(ToBeSorted)
 ```
 
